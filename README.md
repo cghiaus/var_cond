@@ -1,5 +1,7 @@
 # Variable conductivity
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cghiaus/var_cond/HEAD)
+
 ## Introduction
 
 In general, [thermal conductivity](https://en.m.wikipedia.org/wiki/Thermal_conductivity_and_resistivity) varies with temperature, $\lambda = \lambda(\theta)$. The variation may be modelled by a linear or a quadratic function.
