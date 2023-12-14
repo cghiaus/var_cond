@@ -410,7 +410,7 @@ def wall_num(conductivity_model, width, mesh, air_temp, flow_surf, conv_coef):
     flow_surf : list
         Q0 : float
             Flow on surface at x = 0, W/m².
-        T1 : float
+        Q1 : float
             Flow on surface at x = w, W/m².
     conv_coef : list
         h0 : float
@@ -513,7 +513,7 @@ def wall_plot(x, θ, x_a, θ_a, air_temp, material):
     ax = dirichlet_plot(x_w, θ_w, x_a, θ_a, surf_temp, material)
 
     # Plot air temperature
-    w_bl = 0.020                        # width of boundary layer
+    w_bl = 0.020                            # width of boundary layer
 
     # location of air temperature
     x_air = np.array(
@@ -541,30 +541,74 @@ def wall_plot(x, θ, x_a, θ_a, air_temp, material):
     return ax
 
 
-# # Data
-# width = 0.20                # m, width of the plane wall in number of meshes
-# mesh = 3                    # number of meshes
-# air_temp = -20, 20          # °C, air temperatures outdoor; indoor
-# flow_surf = 0, 0            # W/m², flow on surfaces outdoor, indoor
-# conv_coef = 8, 25           # W/(m·K²), convection coefficients outdoor, indoor
-# Tb = 20                     # °C, mean (base) temperature
+def wall_sim(width, mesh,
+             air_temp, flow_surf, conv_coef,
+             Tb, conductivity_poly, deg,
+             material):
+    """
+    Simulation for a wall with covection and flow rate on the surfaces.
 
-# deg = 1
+    Parameters
+    ----------
+    width : float
+        Width of the plane wall, m.
+    mesh : int
+        Number of meshes (i.e., branches) in the numerical model.
+    air_temp : list
+        T0 : float
+            Temperature of outdoor air, °C.
+        T1 : float
+            Temperature of indoor air, °C.
+    flow_surf : list
+        Q0 : float
+            Flow on surface at x = 0, W/m².
+        Q1 : float
+            Flow on surface at x = w, W/m².
+    conv_coef : list
+        h0 : float
+            Convection coefficient on surface at x = 0, W/(m²·K).
+        h1 : float
+            Convection coefficient on surface at x = w, W/(m²·K).
+    Tb : float
+        Base temperature in λ = λ(T), °C.
+    conductivity_poly : list of float
+        - [a, b] if fitted polynom is linear, λ(T) = a·T + b.
+        - [a, b, c] if titted polynom is quadratic, λ(T) = a·T² + b·T + c.
+    deg : int
+        - 1 for linear model, λ(T) = a·T + b.
+        - 2 for quadratic model, λ(T) = a·T² + b·T + c.
+    material : string
+        Name of the material.
 
-# a, b = 0.0002, 0.04         # fitted λ(T) = a * T + b
+    Returns
+    -------
+    q : np.array
+        Heat flux in branches 0, 1, ... , nb-1, W/m².
+    conductivity_model : list
+        - λ0, β, Tb: λ(T) = λ0·(1 + β·(T - Tb)) or λ(T) = λ0·(1 + β·(T - Tb)²)
+        - deg is 1 (linear) or 2 (quadratic)
+    surf_temp : list of float
+        - θ[0] temperature at wall surface x = 0, °C.
+        - θ[-1] temperature at wall surface x = w, °C.
 
-# # Model λ(T) = a*T + b to λ(T) = λ0 * (1 + β * (T - Tb))
-# λ0, β, θ0 = poly2model([a, b], Tb, deg)
-# conductivity_model = [λ0, β, Tb, deg]
+    """
 
-# θ, q, x = wall_num(conductivity_model, width, mesh,
-#                             air_temp, flow_surf, conv_coef)
-# x_w, θ_w = x[1:-1], θ[1:-1]     # wall
+    # λ(T) = a·T + b to λ(T) = λ0·(1 + β·(T - Tb))
+    # or
+    # λ(T) = a·T² + b·T + c to λ(T) = λ0·(1 + β·(T - Tb)²)
+    λ0, β, Tb = poly2model(conductivity_poly, Tb, deg)
+    conductivity_model = [λ0, β, Tb, deg]
 
-# surf_temp = θ[0], θ[-1]
+    θ, q, x = wall_num(conductivity_model, width, mesh,
+                       air_temp, flow_surf, conv_coef)
+    # x_w, θ_w = x[1:-1], θ[1:-1]     # wall
 
-# # Analytical solution
-# θ_a, q_a, x_a = dirichlet_anal(conductivity_model, width,
-#                                         surf_temp, num=5)
+    surf_temp = θ[0], θ[-1]
 
-# wall_plot(x, θ, x_a, θ_a, air_temp, material='Fiberglass');
+    # Analytical solution
+    θ_a, q_a, x_a = dirichlet_anal(conductivity_model, width,
+                                   surf_temp, num=5)
+
+    wall_plot(x, θ, x_a, θ_a, air_temp, material)
+
+    return q, conductivity_model, surf_temp
