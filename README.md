@@ -34,11 +34,11 @@ The coefficient $\beta$ is called _temperature coefficient of thermal conductivi
 
 ## Research questions
 
-We try to answer the reseach questions :
+We try to answer the research questions :
 
 1. Does the conductivity variation with temperature influences significantly the results as compared with the use of a constant value?
 
-2. If the answer is yes, how can we integrate effectivelly the this variation in models.
+2. If the answer is yes, how can we integrate effectively this variation in models.
 
 
 ## References
@@ -46,9 +46,9 @@ We try to answer the reseach questions :
 __Theory__
 - Cengel, Y. A., & Ghajar, A. J. (2015). Heat and Mass Transfer: Fundamentals and Applications, 5th Edition, McGraw-Hill Education. New York. ISBN 978-0-07-339818-1
 
-- [Cengel Y. & Ghajar A. (2020)](https://www.studocu.com/in/document/priyadarshini-engineering-college/english/htchapter-02-xyz/42524065). Chapter 2 Heat condution equatiion, in Heat and Mass Transfer: Fundamentals and Applications, 6th Edition, McGraw-Hill Education, ISBN10: 0073398195 | ISBN13: 9780073398198
+- [Cengel Y. & Ghajar A. (2020)](https://www.studocu.com/in/document/priyadarshini-engineering-college/english/htchapter-02-xyz/42524065). Chapter 2 Heat conduction equation, in Heat and Mass Transfer: Fundamentals and Applications, 6th Edition, McGraw-Hill Education, ISBN10: 0073398195 | ISBN13: 9780073398198
 
-- [Cengel Y. & Ghajar A. (2020a)](https://www.studocu.com/row/document/celal-bayar-universitesi/engineering-mechanics/heat-chap02-094-this-is-summaries/11179160). Chapter 2 Heat condution equatiion, in Heat and Mass Transfer: Fundamentals and Applications, 6th Edition, Solution manual, McGraw-Hill Education
+- [Cengel Y. & Ghajar A. (2020a)](https://www.studocu.com/row/document/celal-bayar-universitesi/engineering-mechanics/heat-chap02-094-this-is-summaries/11179160). Chapter 2 Heat conduction equation, in Heat and Mass Transfer: Fundamentals and Applications, 6th Edition, Solution manual, McGraw-Hill Education
 
 - [Berardi U. et al.(2018)](https://doi.org/10.3390/en11040872). On the Effects of Variation of Thermal Conductivity in
 Buildings in the Italian Construction Sector, Energies, 11(4), 872
