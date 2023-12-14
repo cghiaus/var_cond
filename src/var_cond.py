@@ -90,8 +90,8 @@ def fit_plot(θ, λ, p, λ0, β, θ0, deg, material):
     """
     Plot fitted models of 1st or 2nd order to measured data.
     The models are:
-        - polynomial λ = a·θ + b or λ = a·θ² + b·θ + c
-        - canonical λ₀ = λ₀·(1 + β·(θ - θ₀)) or λ = λ₀·[1 + β·(θ - θ₀)²]
+        - polynomial λ = a·T + b or λ = a·T² + b·T + c
+        - canonical λ₀ = λ₀·(1 + β·(T - Tᵦ)) or λ = λ₀·[1 + β·(T - Tᵦ)²]
 
     Parameters
     ----------
@@ -111,11 +111,11 @@ def fit_plot(θ, λ, p, λ0, β, θ0, deg, material):
     """
     if deg == 1:
         poly = 'λ = a·θ + b'
-        model = 'λ = λ₀·(1 + β·(θ - θ₀))'
+        model = 'λ = λ₀·(1 + β·(T - Tᵦ))'
         λ_model = λ0 * (1 + β * (θ - θ0))
     elif deg == 2:
-        poly = 'λ = a·θ² + b·θ + c'
-        model = 'λ = λ₀·[1 + β·(θ - θ₀)²]'
+        poly = 'λ = a·T² + b·T + c'
+        model = 'λ = λ₀·[1 + β·(T - Tᵦ)²]'
         λ_model = λ0 * (1 + β * (θ - θ0)**2)
     else:
         raise ValueError("deg needs to be 1 or 2.")
@@ -172,7 +172,7 @@ def fit_data2plot(θ0, deg, material):
     elif deg == 2:
         print(f'a = {p[0]:.3e}, b = {p[1]:.3e}, c = {p[2]:.3e}')
 
-    print(f'λ₀ = {λ0:.3f} W/(m·K), β = {β:.5f} W/(m·K²), θ0 = {θ0:.1f} °C')
+    print(f'λ₀ = {λ0:.3f} W/(m·K), β = {β:.5f} W/(m·K²), Tᵦ = {θ0:.1f} °C')
     print(f'Coefficient of determination: R² = {R2:.4f} ')
     return None
 
@@ -190,7 +190,7 @@ def dirichlet_num(conductivity_model, width, mesh, surf_temp):
 
     Parameters
     ----------
-    conductivity_model : list, parameters in λ(T) = λ0·(1 + β·(T - Tb)^deg)
+    conductivity_model : list, parameters in λ(T) = λ0·(1 + β·(T - Tᵦ)^deg)
         λ0 : float
             Conductivity for base temperature T = Tb, W/(m·K).
         β : float
