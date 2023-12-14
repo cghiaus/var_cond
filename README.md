@@ -4,33 +4,33 @@
 
 ## Introduction
 
-In general, [thermal conductivity](https://en.m.wikipedia.org/wiki/Thermal_conductivity_and_resistivity) varies with temperature, $\lambda = \lambda(\theta)$. The variation may be modelled by a linear or a quadratic function.
+In general, [thermal conductivity](https://en.m.wikipedia.org/wiki/Thermal_conductivity_and_resistivity) varies with temperature, $\lambda = \lambda(T)$. The variation may be modelled by a linear or a quadratic function.
 
 When the variation is linear, the model is
 
 $$
-\lambda = \lambda_0 [1 + \beta (\theta - \theta_0)]
+\lambda = \lambda_0 (1 + \beta (T - T_b))
 $$
 
 or
 
 $$\lambda = \lambda_0 (1 + \beta \theta)$$
 
-if the change of variable $(\theta - \theta_0) \rightarrow \theta$ is done.
+if the change of variable $(T - T_b) \rightarrow \theta$ is done.
 
 When the variation is quadratic, the model is
 
 $$
-\lambda = \lambda_0 [1 + \beta (\theta - \theta_0)^2]
+\lambda = \lambda_0 (1 + \beta (T - T_b)^2)
 $$
 
 or
 
 $$\lambda = \lambda_0 (1 + \beta \theta^2)$$
 
-if the change of variable $(\theta - \theta_0) \rightarrow \theta$ is done.
+if the change of variable $(T - T_b) \rightarrow \theta$ is done.
 
-The coefficient $\beta$ is called _temperature coefficient of thermal conductivity_ (Cengel & Ghajar, 2020).
+The coefficient $\beta$ is called _temperature coefficient of thermal conductivity_ ([Cengel & Ghajar, 2020](https://www.studocu.com/in/document/priyadarshini-engineering-college/english/htchapter-02-xyz/42524065)).
 
 ## Research questions
 
