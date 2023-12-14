@@ -30,13 +30,13 @@ $$\lambda = \lambda_0 (1 + \beta \theta^2)$$
 
 if the change of variable $(T - T_b) \rightarrow \theta$ is done.
 
-The coefficient $\beta$ is called _temperature coefficient of thermal conductivity_ ([Cengel & Ghajar, 2020](https://www.studocu.com/in/document/priyadarshini-engineering-college/english/htchapter-02-xyz/42524065)).
+The coefficient $\beta$ is called _temperature coefficient of thermal conductivity_ ([Cengel & Ghajar, 2020](https://www.studocu.com/in/document/priyadarshini-engineering-college/english/htchapter-02-xyz/42524065)). The *base temperature* $T_b$ is the temperature for which the conductivity $\lambda = \lambda_0$. 
 
 ## Research questions
 
 We try to answer the research questions :
 
-1. Does the conductivity variation with temperature influences significantly the results as compared with the use of a constant value?
+1. Does the conductivity variation with temperature, $\lambda(T)$, influences significantly the results (flow rate and temperature distribution) as compared with the use of a constant value, $\lambda_0$?
 
 2. If the answer is yes, how can we integrate effectively this variation in models.
 
