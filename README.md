@@ -66,13 +66,13 @@ __SI Units__
 
 __Scientific computing__
 
-- [Wilson, G., et al.(2014)](https://doi.org/10.1371/journal.pbio.1001745). Best practices for scientific computing. PLoS biology, 12(1), e1001745.
+- [Wilson, G., et al.(2014)](https://doi.org/10.1371/journal.pbio.1001745). Best practices for scientific computing. PLoS Biology, 12(1), e1001745.
 
-- [Wilson, G., et al. (2017)](https://doi.org/10.1371/journal.pcbi.1005510). Good enough practices in scientific computing. PLoS computational biology, 13(6), e1005510.
+- [Wilson, G., et al. (2017)](https://doi.org/10.1371/journal.pcbi.1005510). Good enough practices in scientific computing. PLoS Computational Biology, 13(6), e1005510.
 
-- [Noble, W.S. (2009)](https://doi.org/10.1371/journal.pcbi.1000424) A Quick Guide to Organizing Computational Biology Projects. PLoS Comput Biol 5(7): e1000424.
+- [Noble, W.S. (2009)](https://doi.org/10.1371/journal.pcbi.1000424) A Quick Guide to Organizing Computational Biology Projects. PLoS Computational Biology 5(7): e1000424.
 
-- [Balaban, G. et al (2021)](https://doi.org/10.1371/journal.pcbi.1008549) Ten simple rules for quick and dirty scientific programming, PLoS Comput Biol 17(3): e1008549
+- [Balaban, G. et al (2021)](https://doi.org/10.1371/journal.pcbi.1008549) Ten simple rules for quick and dirty scientific programming, PLoS Computational Biology 17(3): e1008549
 
 - [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/), GitHub
 
