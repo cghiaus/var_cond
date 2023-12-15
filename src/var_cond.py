@@ -111,11 +111,11 @@ def fit_plot(θ, λ, p, λ0, β, θ0, deg, material):
     """
     if deg == 1:
         poly = 'λ = a·θ + b'
-        model = 'λ = λ₀·(1 + β·(T - Tᵦ))'
+        model = 'λ = λ₀·(1 + β·(T - T$_b$))'
         λ_model = λ0 * (1 + β * (θ - θ0))
     elif deg == 2:
         poly = 'λ = a·T² + b·T + c'
-        model = 'λ = λ₀·[1 + β·(T - Tᵦ)²]'
+        model = 'λ = λ₀·[1 + β·(T - T$_b$)²]'
         λ_model = λ0 * (1 + β * (θ - θ0)**2)
     else:
         raise ValueError("deg needs to be 1 or 2.")
@@ -172,7 +172,7 @@ def fit_data2plot(θ0, deg, material):
     elif deg == 2:
         print(f'a = {p[0]:.3e}, b = {p[1]:.3e}, c = {p[2]:.3e}')
 
-    print(f'λ₀ = {λ0:.3f} W/(m·K), β = {β:.5f} W/(m·K²), Tᵦ = {θ0:.1f} °C')
+    print(f'λ₀ = {λ0:.3f} W/(m·K), β = {β:.5f} W/(m·K²), Tb = {θ0:.1f} °C')
     print(f'Coefficient of determination: R² = {R2:.4f} ')
     return None
 
